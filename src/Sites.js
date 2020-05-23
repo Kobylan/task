@@ -12,6 +12,7 @@ class Sites extends Component {
   }
   user(id:${localStorage.getItem(USER_ID)}){
     sites {
+    id
       title
       url
     }
@@ -50,7 +51,7 @@ class Sites extends Component {
               <div className={"sites"}>
                 <div className={"title"}>Sites</div>
                 {data.user.sites.map((site) => (
-                  <div className={"site"}>
+                  <div key={site.id} className={"site"}>
                     <div className={"site-name"}>{site.title}</div>
                     <div className={"site-url"}>{site.url}</div>
                   </div>
